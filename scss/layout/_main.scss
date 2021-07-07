@@ -1,0 +1,301 @@
+#main {
+  & .staff__container {
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2vw;
+    margin-bottom: 4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &-card {
+      border: 1px solid #f6f6f6;
+      max-width: 27rem;
+      border-radius: 0.3rem;
+      transition: all 0.4s ease-in;
+
+      &:not(:first-child) {
+        margin-left: auto;
+
+        @media only screen and (max-width: $bp-medium) {
+          margin-left: 0;
+        }
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        align-self: center;
+        justify-self: center;
+      }
+
+      .card {
+        &-image__container {
+          overflow: hidden;
+        }
+
+        &-image {
+          width: 100%;
+        }
+
+        &-description {
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        &-title {
+          font-size: 1.8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+        }
+
+        &-info {
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: $color-grey;
+          letter-spacing: 0;
+          overflow-wrap: normal;
+          line-height: 1.5;
+          margin-bottom: 2rem;
+        }
+
+        &-button {
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 900;
+          background: $color-primary;
+          color: #fff;
+          border: none;
+          border-radius: 2.2rem;
+          padding: 8px;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 25px -5px #9e9c9e;
+      }
+    }
+  }
+
+  & .options__container {
+    padding: 4rem 0 1rem 0;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      text-align: center;
+    }
+
+    & .section {
+      flex: 0 0 50%;
+
+      @media only screen and (max-width: $bp-medium) {
+        & {
+          flex: 1;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+
+  .options__cards {
+    &-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      letter-spacing: 0.05rem;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 0.04rem;
+      color: $color-grey;
+      margin-bottom: 4rem;
+    }
+
+    &-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      & .icon-container {
+        display: flex;
+        flex: 0 0 50%;
+        margin-bottom: 3rem;
+
+        & .icon-description {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 0 3rem;
+
+          & .icon {
+            &-title {
+              font-size: 1.6rem;
+              font-weight: bold;
+              color: $color-primary;
+              text-transform: uppercase;
+              letter-spacing: 0.04rem;
+            }
+
+            &-info {
+              font-size: 1.4rem;
+              font-weight: 400;
+              color: $color-grey;
+              line-height: 1.5;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tasks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & .task {
+      &-header {
+        display: flex;
+        &:not(:first-child) {
+          margin-bottom: 1rem;
+        }
+
+        &__title {
+          border: 1px solid #e6e6e6;
+          border-right: none;
+          padding: 1.3rem;
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: $color-grey;
+          flex: 1;
+          border-radius: 4px 0 0 4px;
+
+          &.active {
+            background-color: #3b3e4a;
+            color: $color-grey-light;
+            border-radius: 4px 0 0 0;
+          }
+        }
+
+        &__button {
+          background-color: $color-primary;
+          color: #fff;
+          border: none;
+          width: 4.2rem;
+          border: 1px solid #e6e6e6;
+          border-left: none;
+          border-radius: 0 4px 4px 0;
+          font-size: 3.4rem;
+          font-weight: 200;
+
+          &.active {
+            border-radius: 0 4px 0 0;
+          }
+        }
+      }
+    }
+
+    .task-description {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $color-grey;
+      padding: 1.5rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 0 0 4px 4px;
+      background-color: #f0f0f0;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05rem;
+    }
+  }
+
+  & .news__container {
+    display: flex;
+    margin-bottom: 4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      text-align: center;
+    }
+
+    .news__card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 50%;
+
+      @media only screen and (max-width: $bp-medium) {
+        &:not(:last-child) {
+          margin-bottom: 5rem;
+        }
+      }
+
+      & .news {
+        &-header {
+          display: flex;
+          margin-bottom: 3rem;
+        }
+
+        &-description {
+          padding: 0 3rem;
+        }
+
+        &-title {
+          font-size: 1.8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 0.05rem;
+        }
+
+        &-secondary {
+          font-size: 1.8rem;
+          font-weight: 300;
+          color: $color-grey;
+          letter-spacing: 0.05rem;
+        }
+        &-info {
+          margin: 2rem 0;
+          font-size: 1.4rem;
+          font-weight: 400;
+          letter-spacing: 0.05rem;
+          color: $color-grey;
+        }
+
+        &-button {
+          align-self: flex-start;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 900;
+          background: $color-primary;
+          color: #fff;
+          border: none;
+          border-radius: 2.2rem;
+          padding: 8px;
+          @media only screen and (max-width: $bp-medium) {
+            & {
+              align-self: center;
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
